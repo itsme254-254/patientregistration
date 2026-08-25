@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Registration | Eldama Ravine Hospital</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #1b2434;
+      line-height: 1.5;
+    }
+
+    .site-header {
+      background-color: #1b2434;
+      color: #ffffff;
+      padding: 20px 24px;
+    }
+
+    .header-content {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .site-header h2 {
+      font-size: 1.2rem;
+    }
+
+    .tagline {
+      font-size: 0.85rem;
+      color: #a8b2c4;
+    }
+
+    .badge {
+      background-color: #2e3a52;
+      color: #cfe0ff;
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .site-footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7280;
+      padding: 24px;
+    }
+
+    .page-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    .intro h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: #4b5563;
+      margin-bottom: 4px;
+    }
+
+    .time-note {
+      font-size: 0.85rem;
+      color: #6b7280 !important;
+      font-style: italic;
+    }
+
+    .form-section {
+      background-color: #ffffff;
+      border: 1px solid #e2e5eb;
+      border-radius: 10px;
+      padding: 24px;
+      margin-top: 24px;
+    }
+
+    .form-section legend {
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0 4px;
+    }
+
+    .step-number {
+      display: inline-block;
+      background-color: #1b2434;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-right: 8px;
+    }
+
+    .section-desc {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin: 6px 0 18px 0;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .field-row .field {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .required {
+      color: #d92d20;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cbd2d9;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background-color: #fff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #1b2434;
+      box-shadow: 0 0 0 3px rgba(27, 36, 52, 0.15);
+    }
+
+    /* Highlights fields that are invalid AFTER the user has interacted with them */
+    input:required:invalid:not(:placeholder-shown),
+    input:required:invalid:focus {
+      border-color: #d92d20;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+
+    .radio-label input {
+      width: auto;
+    }
+
+    .consent-note {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 20px;
+      margin-bottom: 16px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background-color: #1b2434;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #2e3a52;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 480px) {
+      .site-header h2 {
+        font-size: 1.05rem;
+      }
+
+      .intro h1 {
+        font-size: 1.5rem;
+      }
+
+      .form-section {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+      <div>
+        <h2>Eldama Ravine Hospital</h2>
+        <p class="tagline">Patient Services</p>
+      </div>
+      <span class="badge">HIPAA-compliant intake</span>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <section class="intro">
+      <h1>Patient registration</h1>
+      <p>Complete the four sections below to create a new patient record. Fields marked with an asterisk are required before submission.</p>
+      <p class="time-note">Takes about 5 minutes</p>
+    </section>
+
+    <form action="#" method="POST" novalidate>
+
+      <fieldset class="form-section">
+        <legend><span class="step-number">01</span> Personal details</legend>
+        <p class="section-desc">Legal name and identifying information as it appears on the patient's ID.</p>
+
+        <div class="field">
+          <label for="fullname">Full name <span class="required">*</span></label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="dob">Date of birth <span class="required">*</span></label>
+            <input type="date" id="dob" name="dob" required>
+          </div>
+
+          <div class="field">
+            <label for="bloodgroup">Blood group <span class="required">*</span></label>
+            <select id="bloodgroup" name="bloodgroup" required>
+              <option value="" disabled selected>Select blood group</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Gender <span class="required">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="gender" value="female" required> Female</label>
+            <label class="radio-label"><input type="radio" name="gender" value="male"> Male</label>
+            <label class="radio-label"><input type="radio" name="gender" value="non-binary"> Non-binary</label>
+            <label class="radio-label"><input type="radio" name="gender" value="prefer-not-to-say"> Prefer not to say</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend><span class="step-number">02</span> Contact information</legend>
+        <p class="section-desc">Used for appointment reminders, test results, and billing correspondence.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="phone">Phone number <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. +254 700 000000" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="address">Home address <span class="required">*</span></label>
+          <input type="text" id="address" name="address" placeholder="Include street, city, state, and postal code." required>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend><span class="step-number">03</span> Medical history</legend>
+        <p class="section-desc">Share anything that could affect treatment or prescribing decisions.</p>
+
+        <div class="field">
+          <label for="allergies">Allergies</label>
+          <textarea id="allergies" name="allergies" rows="3" placeholder='List medication, food, and environmental allergies. Enter "None" if not applicable.'></textarea>
+        </div>
+
+        <div class="field">
+          <label for="conditions">Existing medical conditions</label>
+          <textarea id="conditions" name="conditions" rows="3" placeholder="Include ongoing diagnoses, past surgeries, and current medications."></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend><span class="step-number">04</span> Emergency contact</legend>
+        <p class="section-desc">The person we should reach if the patient cannot be contacted directly.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="ec-name">Contact name <span class="required">*</span></label>
+            <input type="text" id="ec-name" name="ec-name" required>
+          </div>
+
+          <div class="field">
+            <label for="ec-phone">Contact phone <span class="required">*</span></label>
+            <input type="tel" id="ec-phone" name="ec-phone" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ec-relationship">Relationship to patient</label>
+          <input type="text" id="ec-relationship" name="ec-relationship">
+        </div>
+      </fieldset>
+
+      <p class="consent-note">By submitting, you confirm the information is accurate and consent to its use for treatment and billing.</p>
+
+      <button type="submit" class="submit-btn">Register Patient</button>
+
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>Eldama Ravine Hospital &middot; Eldama Ravine, Baringo County, Kenya &middot; +254 20 000 0000</p>
+  </footer>
+
+</body>
+</html>
