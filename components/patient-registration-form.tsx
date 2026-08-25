@@ -334,7 +334,7 @@ export function PatientRegistrationForm() {
                   type="tel"
                   inputMode="tel"
                   autoComplete="tel"
-                  placeholder="(555) 019-4827"
+                  placeholder="0712 345 678"
                   aria-invalid={errors.phone ? true : undefined}
                   aria-describedby={errors.phone ? 'phone-error' : undefined}
                 />
@@ -372,7 +372,7 @@ export function PatientRegistrationForm() {
                 name="address"
                 rows={3}
                 autoComplete="street-address"
-                placeholder={'482 W Harbour Lane, Apt 6\nNorthbridge, OR 97209'}
+                placeholder={'House 24, Ravine Road\nEldama Ravine, Baringo County'}
                 aria-invalid={errors.address ? true : undefined}
                 aria-describedby={errors.address ? 'address-error' : undefined}
               />
@@ -468,7 +468,7 @@ export function PatientRegistrationForm() {
                   name="emergencyPhone"
                   type="tel"
                   inputMode="tel"
-                  placeholder="(555) 274-0913"
+                  placeholder="0723 456 789"
                   aria-invalid={errors.emergencyPhone ? true : undefined}
                   aria-describedby={
                     errors.emergencyPhone ? 'emergencyPhone-error' : undefined

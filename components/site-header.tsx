@@ -10,7 +10,7 @@ export function SiteHeader() {
           </span>
           <div className="flex flex-col">
             <span className="text-sm font-semibold tracking-tight">
-              Northbridge Medical Center
+              Eldama Ravine Hospital
             </span>
             <span className="text-xs text-muted-foreground">
               Patient Services

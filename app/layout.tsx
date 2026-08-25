@@ -7,9 +7,9 @@ const _inter = Inter({ subsets: ['latin'] })
 const _plexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'] })
 
 export const metadata: Metadata = {
-  title: 'Patient Registration | Northbridge Medical Center',
+  title: 'Patient Registration | Eldama Ravine Hospital',
   description:
-    'Register as a new patient at Northbridge Medical Center. Provide your personal details, medical history, and emergency contact to set up your care record.',
+    'Register as a new patient at Eldama Ravine Hospital. Provide your personal details, medical history, and emergency contact to set up your care record.',
   generator: 'v0.app',
   icons: {
     icon: [

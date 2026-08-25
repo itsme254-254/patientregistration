@@ -17,8 +17,8 @@ export default function Page() {
       <footer className="border-t border-border">
         <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
           <p className="text-xs leading-relaxed text-muted-foreground">
-            Northbridge Medical Center &middot; 482 Harbour Lane, Northbridge, OR
-            97209 &middot; (555) 019-0100
+            Eldama Ravine Hospital &middot; Eldama Ravine, Baringo County, Kenya
+            &middot; +254 20 000 0000
           </p>
         </div>
       </footer>
